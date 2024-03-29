@@ -172,7 +172,12 @@ public class DriverClass {
 				
 				System.out.println("Enter patient ID:");
 				pid = sc.nextInt();
-				
+
+				if(!(pDao.checkPatientsExists(pid))){
+					System.out.println("Patient doesn't Exists in a data, please register first...");
+					break;
+				}
+
 				System.out.println("Available Hospitals are: ");
 				pDao.listAllHospitals();
 				
