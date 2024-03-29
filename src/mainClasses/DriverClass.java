@@ -189,10 +189,12 @@ public class DriverClass {
 				
 				System.out.println("Enter Doctor's ID:");
 				dId = sc.nextInt();
-				
-				pDao.BookAppointment(pid, hId, dId);
-				
-				System.out.println("Appointment Booked Successfully....");
+					
+				if(pDao.BookAppointment(pid, hId, dId)) {
+					System.out.println("Appointment Booked Successfully....");
+				}else {
+					System.out.println("Failed to book an appointment.Please try again!");
+				}
 				break;
 
 			case 7:
